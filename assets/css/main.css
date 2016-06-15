@@ -1,0 +1,41 @@
+/*
+Version: 1.0
+Author: Epilef Rodriguez
+Author URI: www.khanosblog.com.ve
+*/
+
+body {
+	text-align: center;
+	color: #000000;
+}
+
+/* container */
+.container {
+	width: 960px;
+	margin: 0 auto;
+	text-align: left;
+	position: relative;
+}
+
+/*--- header section ---*/
+.navbar-brand {
+	font-family: 'Kaushan Script', cursive;
+	color: white !important;
+}
+/*--- footer section ---*/
+.site-footer {
+    padding-top: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+}
+
+.site-footer > .copyright {
+    float: left;
+}
+
+.site-footer > .version {
+    float: right;
+}
