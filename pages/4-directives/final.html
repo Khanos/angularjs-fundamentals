@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>AngularJs - Fundamental</title>
+        <link rel="shortcut icon" href="../../home.ico">
+        <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+        <link href="../../node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../node_modules/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../assets/css/main.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="container">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <!-- Header -->
+                        <nav class="navbar navbar-default navbar-static-top navbar-inverse" role="navigation">
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                                <a class="navbar-brand">AngularJs - Fundamental</a>
+                            </div>
+                            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                                <ul class="nav navbar-nav navbar-right" style="padding-right: 20px">
+                                    <li>
+                                        <a href="/">Inicio</a>
+                                    </li>
+                                    <li>
+                                        <a href="/material.html">Material</a>
+                                    </li>
+                                    <li class="active">
+                                        <a>Directives | Final</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </nav>
+                        <p class="text-center"><img src="../../assets/img/AngularJS-large.png" alt="enter image description here"></p>
+                        <hr>
+                        <!-- Inicio del contenido HTML -->
+
+                        <div ng-app="myApp">
+
+                            <div class="row" ng-init="name='John'">
+                                <div class="col-md-6">
+                                    <h3>Ejemplos de directivas</h3>
+                                    <strong>ng-app, ng-init, ng-model</strong><br><br>
+                                    <label for="name">Nombre:
+                                    </label><input class="form-control" type="text" ng-model="name" id="name"><br>
+                                    <p>Usted escribió:
+                                        {{ name }}</p>
+                                </div>
+                            </div>
+                            <hr>
+
+                            <div class="row" ng-controller="myCtrl">
+                                <div class="col-md-6">
+                                    <h3>Utilizando el binding de angular.</h3>
+                                    <label for="quantity">Cantidad:
+                                    </label><input type="number" class="form-control" ng-model="quantity" id="quantity"><br>
+                                    <label for="price">Costo:
+                                    </label><input type="number" class="form-control" ng-model="price" id="price"><br>
+                                    <p>
+                                        total:
+                                        {{quantity*price}}
+                                    </p>
+                                </div>
+                            </div>
+                            <hr>
+
+                            <div class="row" ng-controller="myCtrl">
+                                <h3>Repitiendo elementos html</h3>
+                                <div class="col-md-6">
+                                    <h4>Lista de Frutas</h4>
+                                    <ul>
+                                        <li ng-repeat="x in fruits">
+                                            {{ x }}
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6">
+                                    <h4>Lista de nombres</h4>
+                                    <ul>
+                                        <li ng-repeat="x in names">
+                                            {{ x.name + ', ' + x.country }}
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <hr>
+
+                            <div class="row" ng-controller="myCtrl">
+                                <h3>Mostrando y ocultando</h3>
+                                <div class="col-md-6">
+                                    <h4 ng-show="2>0">Este es un mensaje oculto (Cuando es True)</h4>
+                                    <h4 ng-hide="2<0">Este es otro mensaje oculto (Cuando es False)</h4>
+                                </div>
+                            </div>
+                            <hr>
+
+                            <div class="row" ng-controller="myCtrl">
+                                <h3>Haciendo click</h3>
+                                <div class="col-md-6">
+                                    <label for="x">Ingrese el valor de X: </label><input type="number" class="form-control" ng-model="x" id="x">
+                                    <label for="y">Ingrese el valor de Y: </label><input type="number" class="form-control" ng-model="y" id="y"><br>
+                                    <input type="button" class="btn btn-primary" value="calcular" ng-click="calculate()">
+                                </div>
+                                <div class="col-md-6">
+                                    <p>
+                                        <strong>Total: {{sum}}</strong>
+                                    </p>
+                                </div>
+                            </div>
+                            <hr>
+
+                            <my-directive></my-directive>
+
+                        </div>
+
+                        <!-- Final del contenido HTML -->
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <!-- Footer -->
+            <div class="site-footer">
+                <p class="copyright text-muted">Desarrollado por:
+                    <a href="https://www.linkedin.com/in/khanos">Epilef A. Rodriguez</a>
+                    &copy; Todos los derechos reservados 2016</p>
+                <p class="version text-muted">Version: 1.0.0</p>
+                <div style="clear: both"></div>
+            </div>
+        </div>
+        <script type="text/javascript" src="../../node_modules/angular/angular.min.js"></script>
+        <script type="text/javascript" src="../../pages/4-directives/app/app-final.js"></script>
+    </body>
+</html>

@@ -10,10 +10,10 @@ module.exports = function(grunt) {
         files: ['assets/css/*.css'],
       },
       js: {
-        files: ['Gruntfile.js', './js/*.js'],
+        files: ['Gruntfile.js', 'assets/js/*.js', 'pages/**/**/**/*.js'],
       },
       html: {
-        files: ['*.html', './pages/**/*.html'],
+        files: ['*.html', 'pages/**/**/*.html'],
       }
     },
     connect: {
