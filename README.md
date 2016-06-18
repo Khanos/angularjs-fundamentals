@@ -40,8 +40,7 @@ Debemos instalar el paquete NodeJs LTS para poder correr el servidor web y manej
 Para instalar las dependencias a las librerías y correr el servidor, ejecutamos:
 
 ```bash
-$ git clone git@github.com:Khanos/http-server-template.git
-$ cd http-server-template
-$ npm install
+$ git clone git@github.com:Khanos/angularjs-fundamentals.git
+$ cd angularjs-fundamentals
 $ npm start
 ```

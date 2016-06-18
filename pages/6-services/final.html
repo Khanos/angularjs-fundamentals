@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>AngularJs - Fundamental</title>
+        <link rel="shortcut icon" href="../../home.ico">
+        <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+        <link href="../../node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../node_modules/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../assets/css/main.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="container">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <!-- Header -->
+                        <nav class="navbar navbar-default navbar-static-top navbar-inverse" role="navigation">
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                                <a class="navbar-brand">AngularJs - Fundamental</a>
+                            </div>
+                            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                                <ul class="nav navbar-nav navbar-right" style="padding-right: 20px">
+                                    <li>
+                                        <a href="/">Inicio</a>
+                                    </li>
+                                    <li>
+                                        <a href="/material.html">Material</a>
+                                    </li>
+                                    <li class="active">
+                                        <a>Services | Final</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </nav>
+                        <p class="text-center"><img src="../../assets/img/AngularJS-large.png" alt="enter image description here"></p>
+                        <hr>
+                        <!-- Inicio del contenido HTML -->
+
+                        <div ng-app="myApp" ng-controller="myCtrl as vm">
+                            <div class="row">
+                                <div class="col-md-4 col-sm-4">
+                                    <form name="githubForm" role="form" ng-submit="vm.getUser()" novalidate>
+                                        <label>Nombre de Usuario</label>
+                                        <input type="text" class="form-control" name="username" ng-model="vm.username" required><br>
+                                        <button type="submit" class="btn btn-success" ng-disabled="githubForm.$invalid">Buscar</button>
+                                    </form>
+                                </div>
+                                <div class="col-md-4 col-sm-4" ng-show="vm.searching">
+                                    <i class="fa fa-cog fa-spin fa-3x fa-fw"></i>
+                                    <span>Buscando...</span>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row" ng-hide="vm.error">
+                                <div class="col-md-4 col-sm-4">
+                                        <img class="img-responsive" src="{{vm.user.avatar_url}}" alt="Imagen de usuario" style="width: 400px;" />
+                                </div>
+                                <div class="col-md-6 col-sm-6">
+                                    <h3>{{vm.user.name}}</h3>
+                                    <ul>
+                                        <li>Nombre de Usuario: <strong>{{vm.user.login}}</strong></li>
+                                        <li>Compañia: {{vm.user.company}}</li>
+                                        <li>Pagina web: {{vm.user.blog}}</li>
+                                        <li>Url: <a target="_blank" href="{{vm.user.html_url}}">{{vm.user.html_url}}</a></li>
+                                        <li>Cantidad de repositorios: {{vm.user.public_repos}}</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="row" ng-show="vm.error">
+                                <div class="col-md-12 col-sm-12">
+                                    <h1>No existe el usuario</h1>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Final del contenido HTML -->
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <!-- Footer -->
+            <div class="site-footer">
+                <p class="copyright text-muted">Desarrollado por:
+                    <a href="https://www.linkedin.com/in/khanos">Epilef A. Rodriguez</a>
+                    &copy; Todos los derechos reservados 2016</p>
+                <p class="version text-muted">Version: 1.0.0</p>
+                <div style="clear: both"></div>
+            </div>
+        </div>
+        <script type="text/javascript" src="../../node_modules/angular/angular.min.js"></script>
+        <script type="text/javascript" src="../../pages/6-services/app/app-final.js"></script>
+    </body>
+</html>
