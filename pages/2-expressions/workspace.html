@@ -63,8 +63,23 @@
                                     objeto: {{objeto}}
                                 </p>
                                 <p>
-                                    arr objeto uno: {{objeto.arr[0]}}
+                                    arr objeto UNO: {{objeto.arr[0]}}
                                 </p>
+                                <p>
+                                    arr objeto TRES: {{objeto.arr[2]}}
+                                </p>
+                                <p>
+                                    Subobjeto: {{objeto.subobjeto.subdos}}
+                                </p>
+                                <p>
+                                    func: {{objeto.myfunc()}}
+                                </p>
+                                <img class="img-responsive" src="{{objeto.img}}" style="width:200px;" /><br>
+                                <input type="text"  placeholder="{{objeto.img}}"><br>
+                                <div ng-show="objeto.myfunc()">
+                                    <h3>texto 2</h3><input type="text"  placeholder="{{objeto.img}}"><br>
+                                </div>
+
                             </div>
 
                         </div>
@@ -99,9 +114,12 @@
                             subdos: 2323
                         },
                         myfunc: function() {
-                            return true
-                        }
+                            return 'estoy en la función'
+                        },
+                        img: '../../assets/img/AngularJS-large.png'
                     };
+
+                    $scope.flag = true;
 
                     console.log($scope.objeto);
 
