@@ -47,6 +47,28 @@
 
                         <h1>Workspace</h1>
 
+                        <div ng-app="myApp">
+                            {{test}}<br>
+                            <input type="text" ng-model="test">
+                            <div ng-controller="myCtrl">
+                                {{test}}<br>
+                                <input type="text" ng-model="test">
+                                <p>
+                                    numero: {{numero}}
+                                </p>
+                                <p>
+                                    numero2: {{numero2}}
+                                </p>
+                                <p>
+                                    objeto: {{objeto}}
+                                </p>
+                                <p>
+                                    arr objeto uno: {{objeto.arr[0]}}
+                                </p>
+                            </div>
+
+                        </div>
+
                         <!-- Final del contenido HTML -->
                     </div>
                 </div>
@@ -62,5 +84,29 @@
             </div>
         </div>
         <script type="text/javascript" src="../../node_modules/angular/angular.min.js"></script>
+        <script type="text/javascript">
+            var app = angular.module('myApp',[]);
+            app.controller('myCtrl', function($scope){
+                    $scope.test='tests';
+                    $scope.numero = 364976394;
+                    $scope.numero2 = 38094834;
+                    $scope.objeto = {
+                        numero: 009808,
+                        cadena: 'Esta es una prueba',
+                        arr: ['cadena 1', 'cadena 2', 'cadena 3'],
+                        subobjeto: {
+                            subuno: 'esta es una prueba',
+                            subdos: 2323
+                        },
+                        myfunc: function() {
+                            return true
+                        }
+                    };
+
+                    console.log($scope.objeto);
+
+                });
+        </script>
+
     </body>
 </html>

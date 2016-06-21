@@ -11,7 +11,7 @@
         <link href="../../node_modules/font-awesome/css/font-awesome.min.css" rel="stylesheet">
         <link href="../../assets/css/main.css" rel="stylesheet">
     </head>
-    <body>
+    <body ng-app="">
         <div class="container">
             <div class="container-fluid">
                 <div class="row">
@@ -46,6 +46,20 @@
                         <!-- Inicio del contenido HTML -->
 
                         <h1>Workspace</h1>
+                        <div ng-init="
+                            name='Epilef';
+                            a=1;
+                            b=2;
+                            ob={
+                                first: 'Epilef',
+                                last: 'Rodriguez'
+                            };
+                        ">
+                            <p>Nombre: <input type="text" ng-model="name"></p>
+                            <p>Hola {{name}}</p>
+                            <p>Test numeros {{a*b}}</p>
+                            <p>Test objetos {{ob.first+' '+ob.last}}</p>
+                        </div>
 
                         <!-- Final del contenido HTML -->
                     </div>
