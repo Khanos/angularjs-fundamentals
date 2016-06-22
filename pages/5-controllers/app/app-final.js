@@ -3,7 +3,7 @@
 
     angular
         .module('myApp', [])
-        .controller('myCtrl', function() {
+        .controller('myCtrl', function($location) {
             var vm = this;
             var model = [
                 {
@@ -41,7 +41,7 @@
                 var user = vm.getUser(vm.form.username);
                 if (user) {
                     if (user.password === vm.form.password) {
-                        alert('Bienvenido  '+ vm.form.username);
+                        alert(user.message);
                     } else {
                         alert('Contraseña Invalida');
                     }

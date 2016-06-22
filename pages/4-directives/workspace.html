@@ -45,8 +45,152 @@
                         <hr>
                         <!-- Inicio del contenido HTML -->
 
-                        <div ng-app="myApp">
+                        <div ng-app="myApp" ngCloak>
                             <h1>Workspace</h1>
+                            <div class="container" ng-controller="directiveCtrl">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <h3>{{message}}</h3>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="row" ng-show="flag">
+                                    <h3>ng-show</h3>
+                                    <div class="ol-sm-6">
+                                        <h3>{{message + ' este es un mensaje oculto'}}</h3>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="row" ng-hide="flag">
+                                    <h3>ng-hide</h3>
+                                    <div class="ol-sm-6">
+                                        <h3>{{message + ' este es un mensaje oculto'}}</h3>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="row" ng-hide="flag">
+                                    <div class="col-sm-4">
+                                        <h3>Tablas sin ng-repeat</h3>
+                                        <table class="table table-striped">
+                                            <tr>
+                                                <td>
+                                                    <strong>Nombre </strong>
+                                                </td>
+                                                <td>
+                                                    <strong>Ciudad </strong>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    {{names[0].name}}
+                                                </td>
+                                                <td>
+                                                    {{names[0].country}}
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    {{names[1].name}}
+                                                </td>
+                                                <td>
+                                                    {{names[1].country}}
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <h3>Tablas con ng-repeat</h3>
+                                        <table class="table table-striped">
+                                            <tr>
+                                                <td>
+                                                    <strong>Nombre </strong>
+                                                </td>
+                                                <td>
+                                                    <strong>Ciudad </strong>
+                                                </td>
+                                            </tr>
+                                            <tr ng-repeat="nombre in names">
+                                                <td>
+                                                    {{nombre.name}}
+                                                </td>
+                                                <td>
+                                                    {{nombre.country}}
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <h3>Listas con ng-repeat</h3>
+                                        <ul>
+                                            <li ng-repeat="fruta in fruits">{{fruta}}</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <h3>ng-model</h3>
+                                        <label>Nombre</label><br>
+                                        <input type="text" class="form-control" ng-model="names[0].name">
+                                        <h4>Mi nombre es: {{names[0].name}}</h4>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <h3>ng-disabled</h3>
+                                        <label>Nombre</label><br>
+                                        <input type="text" class="form-control" ng-model="names[0].name" ng-disabled="2>1">
+                                        <h4>Mi nombre es: {{names[0].name}}</h4>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <h3>ng-disabled</h3>
+                                        <label>Nombre</label><br>
+                                        <input type="text" class="form-control" ng-model="names[0].name" ng-readonly="34>1">
+                                        <h4>Mi nombre es: {{names[0].name}}</h4>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-sm-">
+                                        <h3>ng-disabled</h3>
+                                        <label>Nombre</label><br>
+                                        <input type="text" class="form-control" ng-model="names[0].name" ng-readonly="34>1">
+                                        <h4>Mi nombre es: {{names[0].name}}</h4>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-sm-8">
+                                        <h3>Directiva</h3>
+                                        <app-footer></app-footer>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-sm-8">
+                                        <h3>Directiva con template</h3>
+                                        <div class="file-directive"></div>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-sm-8">
+                                        <label>Valor de X: </label>
+                                        <input type="number" class="form-control" ng-model="x"><br>
+                                        <label>Valor de Y: </label>
+                                        <input type="number" class="form-control" ng-model="y"><br>
+                                        <input type="button" class="btn btn-success" ng-click="sum()" value="Sumar">
+                                        <h3>El resultado es: {{total}}</h3>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
 
                         <!-- Final del contenido HTML -->
