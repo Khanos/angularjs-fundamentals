@@ -47,6 +47,13 @@
 
                         <div ng-app="myApp">
                             <h1>Workspace</h1>
+                            <div class="row" ng-controller="myCtrl as vm">
+                                <div class="col-sm-6">
+                                    <label>Nombre de Usuario:</label>
+                                    <input type="text" class="form-control" name="username" ng-model="vm.username"><br>
+                                    <input type="button" class="btn btn-primary" name="name" ng-click="vm.search()" value="Buscar">
+                                </div>
+                            </div>
                         </div>
 
                         <!-- Final del contenido HTML -->

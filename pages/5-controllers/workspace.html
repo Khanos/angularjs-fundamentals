@@ -45,8 +45,20 @@
                         <hr>
                         <!-- Inicio del contenido HTML -->
 
-                        <div ng-app="myApp">
-                            <h1>Workspace</h1>
+                        <div ng-app="myApp" ng-controller="myCtrl as vm">
+                            <div class="row">
+                                <div class="col-md-6 col-sm-6">
+                                    <form name="loginForm" role="form" ng-submit="vm.logIn()" ng-model="vm.form" novalidate>
+                                        <label>Nombre de Usuario:</label><input name="usuario" type="text" class="form-control" ng-model="vm.form.username" required>
+                                        <span ng-show="loginForm.usuario.$invalid"><p style="color: red;">Campo Requerido</p></span>
+                                        <br>
+                                        <label>Contraseña:</label><input type="password" class="form-control" ng-model="vm.form.password" required><br>
+                                        <br>
+                                        <input type="submit" class="btn btn-success" name="name" value="Iniciar Sesión" ng-disabled="loginForm.$invalid">
+                                    </form>
+                                </div>
+                            </div>
+                            <hr>
                         </div>
 
                         <!-- Final del contenido HTML -->

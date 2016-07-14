@@ -2,39 +2,21 @@
     'use strict';
 
     angular
-        .module('myApp', ['ngRoute'])
-        .config(function($routeProvider) {
-            $routeProvider
-                .when("/uno", {
-                    templateUrl: 'pages/uno.html',
-                    controller: 'myCtrlUno',
-                    controllerAs: 'vm'
-                })
-                .when("/dos", {
-                    templateUrl: 'pages/dos.html',
-                    controller: 'myCtrlDos',
-                    controllerAs: 'vm'
-                })
-                .when("/tres", {
-                    templateUrl: 'pages/tres.html',
-                    controller: 'myCtrlTres',
-                    controllerAs: 'vm'
-                });
-        })
+        .module('myApp')
         .controller('myCtrlUno', myCtrlUno)
         .controller('myCtrlDos', myCtrlDos)
         .controller('myCtrlTres', myCtrlTres);
 
     function myCtrlUno() {
         var vm = this;
-        vm.message = 'Esta es la página UNO';
+        vm.message = 'Esta es adasdasdasla página UNO';
     }
     function myCtrlDos() {
         var vm = this;
-        vm.message = 'Esta es la página DOS';
+        vm.message = 'Esta es la pádasdasdasgina DOS';
     }
     function myCtrlTres() {
         var vm = this;
-        vm.message = 'Esta es la página TRES';
+        vm.message = 'Esta es la págdasdasdasdina TRES';
     }
 })();

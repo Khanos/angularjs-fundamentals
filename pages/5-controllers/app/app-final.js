@@ -3,7 +3,7 @@
 
     angular
         .module('myApp', [])
-        .controller('myCtrl', function($location) {
+        .controller('myCtrl', function() {
             var vm = this;
             var model = [
                 {
